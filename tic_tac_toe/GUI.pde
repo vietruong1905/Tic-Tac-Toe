@@ -18,7 +18,7 @@ void GUI_setup() {
   space1x= width*0;
   space1y= height*1/4;
   space1w= width*1/3;
-  space1h= height;
+  space1h= height*1/5.5;
   rect(space1x, space1y, space1w ,space1h);
   //rect(space2x,space2y,space2w,space2h);
 
