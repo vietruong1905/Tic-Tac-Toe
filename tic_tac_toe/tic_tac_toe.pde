@@ -9,6 +9,7 @@ void setup() {
 
 void draw() {
   quitButtonDraw();
+  drawXO();
 }
 
 void keyPressed() {

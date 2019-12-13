@@ -3,17 +3,24 @@ PFont titleFont;
 //String[] fontList = PFont.list(); //To list all fonts available on system
 float titleWidth, titleHeight;
 String title, quit;
-float currentTempEdm, currentTempCalgary, currentTempRD;
-String nameEdm, nameCalg, nameRD;
+String dark = "Dark Mode", easy = "easy", medium = "medium", impossible = "impossible";
+String reset = "Reset", scoreboard = "Scoreboard", playerMode = "Player Mode";
+String playerMode2 = "2-Player Mode", playerModeAI = "Against the Computer";
+String x="X:", o="O:";
+String X = "X", O = "O";
+
+color black = 0, white = 255;
 
 void textSetup() {
   titleFont = createFont ("Harrington", height); // //Must also Tools / Create Font / Find Font / Do Not Press "OK"
-  title = "Mercer's Kitchen Fastantic Weather App";
+  title = "Viet's Tic Tac Toe";
   titleWidth = width * 1/2;
   titleHeight = height * 1/10;
   quit = "X";
 
   //printArray(fontList); //For listing all possible fonts to choose, then createFont
+  
+  
 }
 
 void textDraw(String string, PFont font, float height, color ink, int alignHorizontal, int alignVertical, float rectX, float rectY, float rectWidth, float rectHeight) {
@@ -22,11 +29,11 @@ void textDraw(String string, PFont font, float height, color ink, int alignHoriz
   textAlign (alignHorizontal, alignVertical); //Align X&Y, see Processing.org / Reference
   //Values: LEFT | CENTER | RIGHT & TOP | CENTER | BOTTOM | BASELINE
   //Parameters change depending on font and serifs
-  if (string.length() >= 3) {
+  if (string.length() >= 14) {
     fontSize = textCalculator(height, string, rectWidth);
   } 
   else {
-    fontSize = fontSize * 0.08;
+    fontSize = fontSize * 0.05;
   }
   textFont(font, fontSize); //Change the number until it fits, largest font size
   text(string, rectX, rectY, rectWidth, rectHeight); //add rect() parameters
