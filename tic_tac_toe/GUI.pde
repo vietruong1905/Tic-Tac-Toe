@@ -18,7 +18,8 @@ float part1dx, part1dy,part1dw,part1dh;
 float part2x,part2y,part2w,part2h;
 float part2cx, part2cy,part2cw,part2ch;
 float part2dx, part2dy,part2dw,part2dh;
-float part2abx, part2aby,part2abw,part2abh;
+float part2ax, part2ay,part2aw,part2ah;
+float part2bx, part2by,part2bw,part2bh;
 
 void GUI_setup() {
   headerX= width*0;
@@ -82,11 +83,17 @@ void GUI_setup() {
   part2dh=headerHeight/2;
   rect( part2dx, part2dy,part2dw,part2dh);
   //
-   part2abx=headerWidth/2 ;
- part2aby=0;
-   part2abw=headerWidth/4;
-  part2abh=headerHeight;
-  rect( part2abx, part2aby,part2abw,part2abh);
+   part2ax=headerWidth/4+ headerWidth/4   ;
+ part2ay=headerY;
+   part2aw=headerWidth/4 ;
+  part2ah=headerHeight;
+  rect( part2ax, part2ay,part2aw,part2ah);
+  //
+    part2bx=headerWidth/4+ headerWidth/4 ;
+ part2by=headerHeight/2;
+   part2bw=headerWidth/4 ;
+  part2bh=headerHeight;
+  rect( part2bx, part2by,part2bw,part2bh);
   
   //
   space1x= boardX; 
