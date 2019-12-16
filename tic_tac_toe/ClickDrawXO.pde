@@ -12,13 +12,13 @@ void drawXO() {
         rect(space1x, space1y, space1w, space1h);
         textDraw(X, titleFont, height, black, CENTER, CENTER, space1x, space1y, space1w, space1h);
         stroke(1);
-        lines();
+       // lines();
       } else if (clickO[i]==true) {
         noStroke();
         rect(space1x, space1y, space1w, space1h);
         textDraw(O, titleFont, height, black, CENTER, CENTER, space1x, space1y, space1w, space1h);
         stroke(1);
-        lines();
+        //lines();
       } else {
       }
     }

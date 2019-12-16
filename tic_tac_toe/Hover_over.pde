@@ -1,7 +1,7 @@
 void hoverOver() {
   //
   //Reset, rect(resetX, scoreYnameX, resetWidth, scoreHeightXO*0.5);
-  if (mouseX >= resetX  && mouseX <= resetX+resetWidth && mouseY >= scoreYnameX && mouseY <= (scoreYnameX+(scoreHeightXO*0.5)) ) {
+  if (mouseX >= part2ax  && mouseX <= part2ax+part2aw && mouseY >= scoreYnameX && mouseY <= (scoreYnameX+(scoreHeightXO*0.5)) ) {
     fill(yellowQuitButton);
     noStroke();
     rect(resetX, scoreYnameX, resetWidth, scoreHeightXO*0.5);
