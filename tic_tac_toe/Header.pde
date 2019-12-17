@@ -9,7 +9,7 @@ void header() {
   textDraw(x, titleFont, height, black, RIGHT, CENTER, part2cx, part2cy, part2cw*0.5, part2ch*0.5);
   textDraw(o, titleFont, height, black, RIGHT, CENTER, part2dx, part2dy, part2dw*0.5, part2dh*0.5);
   //xScoreS = String.valueOf(xScoreI);
-  //textDraw(xScoreS, titleFont, height, black, LEFT, CENTER, scoreXvarX, scoreYvarX, scoreWidthXO*0.5, scoreHeightXO*0.5);
+  //textDraw(xScoreS, titleFont, height, black, LEFT, CENTER, part2cx, part2cy, part2cw*0.5, part2ch*0.5);
   //xScoreS = String.valueOf(oScoreI);
   //textDraw(xScoreS, titleFont, height, black, LEFT, CENTER, scoreXvarO, scoreYvarO, scoreWidthXO*0.5, scoreHeightXO*0.5);
 }
