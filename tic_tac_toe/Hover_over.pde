@@ -45,19 +45,19 @@ void hoverOver() {
     textDraw(dark, titleFont, height, black, LEFT, CENTER, darkX, darkY, darkWidth, darkHeight);
   }
   //
-  //Easy, rect(easyX, easyY, easyWidth, easyHeight);
-  if (mouseX >= easyX  && mouseX <= easyX+easyWidth && mouseY >= easyY && mouseY <= easyY+easyHeight) {
+  //Easy, rect(part1ax, part1ay,part1aw,part1ah);
+  if (mouseX >= part1ax  && mouseX <= part1ax+part1aw && mouseY >= part1ay && mouseY <= part1ay+part1ah) {
     fill(yellowQuitButton);
     noStroke();
-    rect(easyX, easyY, easyWidth, easyHeight);
+    rect(part1ax, part1ay,part1aw,part1ah);
     stroke(1);
-    textDraw(easy, titleFont, height, black, CENTER, CENTER, easyX, easyY, easyWidth, easyHeight);
+    textDraw(easy, titleFont, height, black, CENTER, CENTER, part1ax, part1ay,part1aw,part1ah);
   } else {
     fill(purpleQuitButton);
     noStroke();
-    rect(easyX, easyY, easyWidth, easyHeight);
+    rect(part1ax, part1ay,part1aw,part1ah);
     stroke(1);
-    textDraw(easy, titleFont, height, black, CENTER, CENTER, easyX, easyY, easyWidth, easyHeight);
+    textDraw(easy, titleFont, height, black, CENTER, CENTER, part1ax, part1ay,part1aw,part1ah);
   }
   //
   //Medium, rect(mediumX, mediumY, mediumWidth, mediumHeight);
