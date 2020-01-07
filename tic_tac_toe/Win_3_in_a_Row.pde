@@ -42,5 +42,5 @@ Boolean winCheck() {
 
 void winDraw() {
   println("You win. Add the reset button to activate loop and reset all variables");
-  reset=true; //Must restart game here
+  //reset=true; //Must restart game here
 }

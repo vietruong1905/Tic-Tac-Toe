@@ -1,10 +1,12 @@
 Boolean twoPlayer2 = false, twoPlayerAI = false;
 
+// part1dx, part1dy,part1dw,part1dh( impossible) 
+// part2bx, part2by,part2bw,part2bh ( scoreboard ) 
 void twoPlayerBoolean() {
-  if (twoPlayer2 == false && mouseX >= scoreA  && mouseX <= impossibleY+scoreWidth && mouseY >= impossibleY && mouseY <= impossibleY+impossibleHeight) {
+  if (twoPlayer2 == false && mouseX >= part2bx  && mouseX <= part1dy+part2bw && mouseY >= part1dy && mouseY <= part1dy+part1dh) {
     twoPlayer2 = true;
     twoPlayerAI = false;
-  } else if (twoPlayerAI == false && mouseX >= scoreA  && mouseX <= impossibleY+scoreWidth && mouseY >= impossibleY && mouseY <= impossibleY+impossibleHeight) {
+  } else if (twoPlayerAI == false && mouseX >= part2bx  && mouseX <= part1dy+part2bw && mouseY >= part1dy && mouseY <= part1dy+part1dh) {
     twoPlayer2 = false;
     twoPlayerAI = true;
   }
@@ -14,16 +16,16 @@ void twoPlayerGame() {
   if (twoPlayer2 == true) {
     fill(yellowQuitButton);
     noStroke();
-    rect(scoreA, impossibleY, scoreWidth, impossibleHeight);
+    rect(part2bx, part1dy, part2bw, part1dh);
     stroke(1);
-    textDraw(playerMode2, titleFont, height, black, CENTER, TOP, scoreA, impossibleY, scoreWidth, impossibleHeight);
+    textDraw(playerMode2, titleFont, height, black, CENTER, TOP, part2bx, part1dy, part2bw, part1dh);
   }
   if (twoPlayerAI == true) {
     fill(yellowQuitButton);
     noStroke();
-    rect(scoreA, impossibleY, scoreWidth, impossibleHeight);
+    rect(part2bx, part1dy, part2bw, part1dh);
     stroke(1);
-    textDraw(playerModeAI, titleFont, height, black, CENTER, CENTER, scoreA, impossibleY, scoreWidth, impossibleHeight);
+    textDraw(playerModeAI, titleFont, height, black, CENTER, CENTER, part2bx, part1dy, part2bw, part1dh);
   }
 }
 void play2player() {
