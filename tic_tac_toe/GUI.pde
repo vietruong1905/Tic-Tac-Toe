@@ -20,6 +20,8 @@ float part2cx, part2cy,part2cw,part2ch;
 float part2dx, part2dy,part2dw,part2dh;
 float part2ax, part2ay,part2aw,part2ah;
 float part2bx, part2by,part2bw,part2bh;
+float scoreXnameX, scoreYnameX, scoreXvarX, scoreYvarX;
+float scoreXnameO, scoreYnameO, scoreXvarO, scoreYvarO;
 
 void GUI_setup() {
   headerX= width*0;

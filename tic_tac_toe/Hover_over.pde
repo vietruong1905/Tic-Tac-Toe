@@ -1,33 +1,35 @@
 void hoverOver() {
   //
   //Reset, rect(resetX, scoreYnameX, resetWidth, scoreHeightXO*0.5);
-  if (mouseX >= part2ax  && mouseX <= part2ax+part2aw && mouseY >= scoreYnameX && mouseY <= (scoreYnameX+(scoreHeightXO*0.5)) ) {
+  if (mouseX >= part2ax  && mouseX <= part2ax+part2aw && mouseY >= scoreYnameX && mouseY <= (scoreYnameX+(part2ah*0.5)) ) {
     fill(yellowQuitButton);
     noStroke();
-    rect(resetX, scoreYnameX, resetWidth, scoreHeightXO*0.5);
+    rect(part2ax, part2ay,part2aw,part2ah*0.5);
     stroke(1);
-    textDraw(reset, titleFont, height, black, CENTER, CENTER, resetX, scoreYnameX, resetWidth, scoreHeightXO*0.5);
+    textDraw(reset, titleFont, height, black, CENTER, CENTER, part2ax, scoreYnameX, part2aw, part2ah*0.5);
   } else {
     //fill(purpleQuitButton);
     noStroke();
-    rect(resetX, scoreYnameX, resetWidth, scoreHeightXO*0.5);
+    rect(part2ax, scoreYnameX, part2aw, part2ah*0.5);
     stroke(1);
-    textDraw(reset, titleFont, height, black, CENTER, CENTER, resetX, scoreYnameX, resetWidth, scoreHeightXO*0.5);
+    textDraw(reset, titleFont, height, black, CENTER, CENTER, part2ax, scoreYnameX, part2aw, part2ah*0.5);
   }
-  //
+  // part1dx, part1dy,part1dw,part1dh( impossible) 
+  // part1cx, part1cy,part1cw,part1ch
   //Player Mode, rect(scoreA, impossibleY, scoreWidth, impossibleHeight)
-  if (twoPlayer2 == false && twoPlayerAI == false && mouseX >= scoreA  && mouseX <= impossibleY+scoreWidth && mouseY >= impossibleY && mouseY <= impossibleY+impossibleHeight) {
+  // part2bx, part2by,part2bw,part2bh
+  if (twoPlayer2 == false && twoPlayerAI == false && mouseX >= part2bx  && mouseX <= part1dy+part2bw && mouseY >= part1dy && mouseY <= part1dy+part1dh) {
     fill(yellowQuitButton);
     noStroke();
-    rect(scoreA, impossibleY, scoreWidth, impossibleHeight);
+    rect(part2bx, part1cy, part2bw, part1ch);
     stroke(1);
-    textDraw(playerMode, titleFont, height, black, CENTER, TOP, scoreA, impossibleY, scoreWidth, impossibleHeight);
+    textDraw(playerMode, titleFont, height, black, CENTER, TOP, part2bx, part1cy, part2bw, part1ch);
   } else {
     fill(purpleQuitButton);
     noStroke();
-    rect(scoreA, impossibleY, scoreWidth, impossibleHeight);
+    rect(part2bx, part1cy, part2bw, part1ch);
     stroke(1);
-    textDraw(playerMode, titleFont, height, black, CENTER, TOP, scoreA, impossibleY, scoreWidth, impossibleHeight);
+    textDraw(playerMode, titleFont, height, black, CENTER, TOP, part2bx, part1dy, part2bw, part1dh);
   }
   //
   //Dark Mode, rect(part1dx, part1dy,part1dw,part1dh);
