@@ -7,18 +7,53 @@ void drawXO() {
   int XOdraw = drawCounter % 2;
   for (int i=0; i<noDraw.length; i++) {
     if ( noDraw[i]==true) {
+      //println("In drawXO, in noDraw true ", i);
       if (clickX[i]==true) {
         noStroke();
-        rect(space1x, space1y, space1w, space1h);
-        textDraw(X, titleFont, height, black, CENTER, CENTER, space1x, space1y, space1w, space1h);
+        rect( space1x, space1y, space1w, space1h,
+ space2x,space2y,space2w,space2h ,
+ space3x,space3y,space3w,space3h ,
+ space4x,space4y,space4w,space4h ,
+ space5x,space5y,space5w,space5h  ,
+ space6x,space6y,space6w,space6h ,
+ space7x,space7y,space7w,space7h ,
+ space8x,space8y,space8w,space8h ,
+ space9x,space9y,space9w,space9h);
+        textDraw(X, titleFont, height, black, CENTER, CENTER, space1x, space1y, space1w, space1h ,
+ space2x,space2y,space2w,space2h ,
+ space3x,space3y,space3w,space3h ,
+ space4x,space4y,space4w,space4h ,
+ space5x,space5y,space5w,space5h  ,
+ space6x,space6y,space6w,space6h ,
+ space7x,space7y,space7w,space7h ,
+ space8x,space8y,space8w,space8h ,
+ space9x,space9y,space9w,space9h);
         stroke(1);
-       // lines();
+        lines();
+        //println("In drawXO, clickX, should have drawn", i);
       } else if (clickO[i]==true) {
         noStroke();
-        rect(space1x, space1y, space1w, space1h);
-        textDraw(O, titleFont, height, black, CENTER, CENTER, space1x, space1y, space1w, space1h);
+        rect(space1x, space1y, space1w, space1h ,
+ space2x,space2y,space2w,space2h ,
+ space3x,space3y,space3w,space3h ,
+ space4x,space4y,space4w,space4h ,
+ space5x,space5y,space5w,space5h  ,
+ space6x,space6y,space6w,space6h ,
+ space7x,space7y,space7w,space7h ,
+ space8x,space8y,space8w,space8h ,
+ space9x,space9y,space9w,space9h);
+        textDraw(O, titleFont, height, black, CENTER, CENTER, space1x, space1y, space1w, space1h ,
+ space2x,space2y,space2w,space2h ,
+ space3x,space3y,space3w,space3h ,
+ space4x,space4y,space4w,space4h ,
+ space5x,space5y,space5w,space5h  ,
+ space6x,space6y,space6w,space6h ,
+ space7x,space7y,space7w,space7h ,
+ space8x,space8y,space8w,space8h ,
+ space9x,space9y,space9w,space9h);
         stroke(1);
-        //lines();
+        lines();
+        //println("In drawXO, clickO, should have drawn", i);
       } else {
       }
     }
