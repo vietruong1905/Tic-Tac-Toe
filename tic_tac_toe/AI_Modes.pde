@@ -1,8 +1,9 @@
 //Need variable: drawCounter++; //drawCounter=drawCounter+1
 //emulate click by choosing 
+Boolean firstAI_turn = true; //cannot be local or else will reset value
 
 void easy() {
-  drawXO();
+  drawXO(); //don't need to reference clickXO(), always listening
   int AI_Turn = drawCounter % 2;
   if (AI_Turn == 1) randomChoice();
   Boolean win = winCheck();
@@ -10,7 +11,30 @@ void easy() {
 }
 
 void medium() {
+  //println("inside medium");
+  Boolean win = false;
+  int AI_Turn = drawCounter % 2;
+  drawXO();
+  //blockWin();
+  if (AI_Turn==1) {
+    println("Here in medium");
+    if ( firstAI_turn == true ) {
+      randomChoice();
+      firstAI_turn = false;
+      println("First Turn", firstAI_turn);
+    } else {
+     // blockWin();
+      drawXO();
+      println("Inside AI", firstAI_turn);
+    }
+  }
+  drawXO();
+  win = winCheck();
+  if (win == true) winDraw();
 }
+//println ("First Drawcounter", drawCounter);
+//println ("First AI_Turn", AI_Turn);
+//println("Outside AI", firstAI_turn);
 
 void impossible() {
 }
@@ -31,19 +55,19 @@ void randomChoice() {
     clickX[index] = true;
     noDraw[index] = true;
     noStroke();
-    rect(space1x, space1y, space1w, space1h);
-    textDraw(X, titleFont, height, black, CENTER, CENTER, space1x, space1y, space1w, space1h);
+    rect(spaceX[index], spaceY[index], spaceWidth, spaceHeight);
+    textDraw(X, titleFont, height, black, CENTER, CENTER, spaceX[index], spaceY[index], spaceWidth, spaceHeight);
     stroke(1);
-    //lines();
+    lines();
   } else if (XOclick == 0) {
     clickO[index] = true;
     noDraw[index] = true;
     noStroke();
-    rect(space1x, space1y, space1w, space1h);
-    textDraw(O, titleFont, height, black, CENTER, CENTER, space1x, space1y, space1w, space1h);
+    rect(spaceX[index], spaceY[index], spaceWidth, spaceHeight);
+    textDraw(O, titleFont, height, black, CENTER, CENTER, spaceX[index], spaceY[index], spaceWidth, spaceHeight);
     stroke(1);
-   // lines();
+    lines();
   } else {
   }//Empty else decision
-  println(index);
+  //println("Random Index:", index);
 }

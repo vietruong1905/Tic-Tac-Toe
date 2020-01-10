@@ -2,10 +2,12 @@
 PFont quitButtonFont;
 color purple = #2C08FF; //Ink
 color purpleQuitButton = #FFDBFB;
-color yellowQuitButton = #FEFFDB;
+color yellowQuitButton = #FEFFDB, otherYellow = #FAFF03;
 
 void quitButtonRect() {
+  noStroke();
   rect(width*19/20, height*0, width*1/20, height*1/20);
+  stroke(1);
 }
 void quitButtonSetup() {
   quitButtonFont = createFont ("Harrington", 55); //Must also Tools / Create Font / Find Font / Do Not Press "OK"
@@ -14,8 +16,8 @@ void quitButtonSetup() {
 
 void quitButtonDraw() {
   //HoverOver
-  if (mouseX >= width*19/20  && mouseX <= width && mouseY >= height*0 && mouseY <= height*1/20) {
-    fill(yellowQuitButton);
+  if (mouseX >= width*19/20  && mouseX <= width && mouseY >= height*0 && mouseY <= darkHeight) {
+    fill(otherYellow);
     quitButtonRect();
   } else {
     fill(purpleQuitButton);

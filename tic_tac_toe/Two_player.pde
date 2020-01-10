@@ -1,14 +1,30 @@
-Boolean twoPlayer2 = false, twoPlayerAI = false;
+Boolean twoPlayer2=false, twoPlayerAI=false, easy=false, medium=false, impossible=false;
 
-// part1dx, part1dy,part1dw,part1dh( impossible) 
-// part2bx, part2by,part2bw,part2bh ( scoreboard ) 
 void twoPlayerBoolean() {
-  if (twoPlayer2 == false && mouseX >= part2bx  && mouseX <= part1dy+part2bw && mouseY >= part1dy && mouseY <= part1dy+part1dh) {
+  if (twoPlayer2 == false && mouseX >= scoreA  && mouseX <= impossibleY+scoreWidth && mouseY >= impossibleY && mouseY <= impossibleY+impossibleHeight) {
     twoPlayer2 = true;
     twoPlayerAI = false;
-  } else if (twoPlayerAI == false && mouseX >= part2bx  && mouseX <= part1dy+part2bw && mouseY >= part1dy && mouseY <= part1dy+part1dh) {
+  } else if (twoPlayerAI == false && mouseX >= scoreA  && mouseX <= impossibleY+scoreWidth && mouseY >= impossibleY && mouseY <= impossibleY+impossibleHeight) {
     twoPlayer2 = false;
     twoPlayerAI = true;
+  }
+  if (twoPlayer2 == false && twoPlayerAI == true && mouseX >= easyX  && mouseX <= easyX+easyWidth && mouseY >= easyY && mouseY <= easyY+easyHeight) {
+    easy = true;
+    medium = false;
+    impossible = false;
+    //println(easy, medium, impossible);
+  }
+  if (twoPlayer2 == false && twoPlayerAI == true && mouseX >= mediumX  && mouseX <= mediumX+mediumWidth && mouseY >= mediumY && mouseY <= mediumY+mediumHeight) {
+    easy = false;
+    medium = true;
+    impossible = false;
+    //println(easy, medium, impossible);
+  }
+  if (twoPlayer2 == false && twoPlayerAI == true && mouseX >= impossibleX  && mouseX <= impossibleX+impossibleWidth && mouseY >= impossibleY && mouseY <= impossibleY+impossibleHeight ) {
+    easy = false;
+    medium = false;
+    impossible = true;
+    //println(easy, medium, impossible);
   }
 }
 
@@ -16,28 +32,32 @@ void twoPlayerGame() {
   if (twoPlayer2 == true) {
     fill(yellowQuitButton);
     noStroke();
-    rect(part2bx, part1dy, part2bw, part1dh);
+    rect(scoreA, impossibleY, scoreWidth, impossibleHeight);
     stroke(1);
-    textDraw(playerMode2, titleFont, height, black, CENTER, TOP, part2bx, part1dy, part2bw, part1dh);
+    textDraw(playerMode2, titleFont, height, black, CENTER, TOP, scoreA, impossibleY, scoreWidth, impossibleHeight);
   }
   if (twoPlayerAI == true) {
     fill(yellowQuitButton);
     noStroke();
-    rect(part2bx, part1dy, part2bw, part1dh);
+    rect(scoreA, impossibleY, scoreWidth, impossibleHeight);
     stroke(1);
-    textDraw(playerModeAI, titleFont, height, black, CENTER, CENTER, part2bx, part1dy, part2bw, part1dh);
+    textDraw(playerModeAI, titleFont, height, black, CENTER, CENTER, scoreA, impossibleY, scoreWidth, impossibleHeight);
   }
 }
 void play2player() {
   //Current Procedure
   //println("Play two player");
   drawXO();
+  Boolean win = winCheck();
+  if (win == true) winDraw();
 }
 
 void twoPlayerKey() {
-  if ( twoPlayer2 == true) {
+  if ( twoPlayer2 == true ) {
     play2player();
   } else if (twoPlayerAI == true) {
-    //println("Now playing 2-Player AI");
-  } //should reset all varaibles with 2-Player
-}   
+    if(easy==true) easy();
+    if(medium==true) medium();
+    if(impossible==true) impossible();
+  }
+}

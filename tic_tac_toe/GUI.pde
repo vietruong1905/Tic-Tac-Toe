@@ -1,157 +1,126 @@
-
-float headerX,headerY, headerWidth, headerHeight; 
-float boardX,boardY,boardWidth,boardHeight;
-float space1x, space1y, space1w, space1h;
-float space2x,space2y,space2w,space2h;
-float space3x,space3y,space3w,space3h;
-float space4x,space4y,space4w,space4h;
-float space5x,space5y,space5w,space5h;  
-float space6x,space6y,space6w,space6h;
-float space7x,space7y,space7w,space7h;
-float space8x,space8y,space8w,space8h;
-float space9x,space9y,space9w,space9h;
-float  part1x, part1y,part1w,part1h;
-float part1ax, part1ay,part1aw,part1ah;
-float part1bx, part1by,part1bw,part1bh;
-float part1cx, part1cy,part1cw,part1ch;
-float part1dx, part1dy,part1dw,part1dh;
-float part2x,part2y,part2w,part2h;
-float part2cx, part2cy,part2cw,part2ch;
-float part2dx, part2dy,part2dw,part2dh;
-float part2ax, part2ay,part2aw,part2ah;
-float part2bx, part2by,part2bw,part2bh;
+//Global Varaibles
+float headerX, headerY, headerWidth, headerHeight;
+float boardX, boardY, BoardWith, BoardHeight;
+float spaceWidth, spaceHeight;
+float[] spaceX = new float[9];
+float[] spaceY = new float[9];
+float lineAX1, lineAY1, lineBX1, lineBY1;
+float lineAX2, lineAY2, lineBX2, lineBY2;
+float lineAX3, lineAY3, lineBX3, lineBY3;
+float lineAX4, lineAY4, lineBX4, lineBY4;
+float resetX, resetY, resetWidth, resetHeight;
+float scoreA, scoreB, scoreWidth, scoreHeight, scoreAX, scoreBX;
+float scoreAO, scoreBO, scoreWidthXO, scoreHeightXO;
+float darkX, darkY, darkWidth, darkHeight;
+float easyX, easyY, easyWidth, easyHeight;
+float mediumX, mediumY, mediumWidth, mediumHeight;
+float impossibleX, impossibleY, impossibleWidth, impossibleHeight;
 float scoreXnameX, scoreYnameX, scoreXvarX, scoreYvarX;
 float scoreXnameO, scoreYnameO, scoreXvarO, scoreYvarO;
 
 void GUI_setup() {
-  headerX= width*0;
-  headerY= height*0;
-  headerWidth= width;
-  headerHeight= height*1/4;
-  rect(headerX,headerY,headerWidth,headerHeight);
-  //
-  boardX= width*0;
-  boardY= height*1/4;
-  boardWidth= width;
-  boardHeight= height*3/4;
-  rect(boardX,boardY,boardWidth,boardHeight);
-  //
-  part1x= headerX;
-  part1y= headerY;
-  part1w= headerWidth/2;
-  part1h= headerHeight;
-  rect( part1x, part1y,part1w,part1h);
-  //
-  part1ax=headerX;
-  part1ay=headerY;
-  part1aw= headerWidth/4;
-  part1ah= headerHeight/2;
-  rect(part1ax, part1ay,part1aw,part1ah);
-  //
-  part1bx=headerWidth/4;
-  part1by=headerY;
-  part1bw=headerWidth/4;
-  part1bh=headerHeight/2;
-  rect(part1bx, part1by,part1bw,part1bh);
-  //
-  part1cx=0;
-  part1cy=headerHeight/2;
-  part1cw=headerWidth/4;
-  part1ch=headerHeight/2;
-  rect(part1cx, part1cy,part1cw,part1ch);
-  //
-   //
-  part1dx=headerWidth/4;
-  part1dy=headerHeight/2;
-  part1dw=headerWidth/4;
-  part1dh=headerHeight/2;
-  rect(part1dx, part1dy,part1dw,part1dh);
-  //
-  part2x= headerWidth/2;
-  part2y=headerY; 
-  part2w= width-(headerWidth/2);
-  part2h=headerHeight;
-  rect(part2x,part2y,part2w,part2h);
-  //
-  part2cx=headerWidth/4 + headerWidth/4 + headerWidth/4;
- part2cy=0;
-   part2cw=headerWidth/4;
-  part2ch=headerHeight/2;
-  rect( part2cx, part2cy,part2cw,part2ch);
-  //
-   part2dx=headerWidth/4 + headerWidth/4 + headerWidth/4;
- part2dy=headerHeight/2;
-   part2dw=headerWidth/4;
-  part2dh=headerHeight/2;
-  rect( part2dx, part2dy,part2dw,part2dh);
-  //
-   part2ax=headerWidth/4+ headerWidth/4   ;
- part2ay=headerY;
-   part2aw=headerWidth/4 ;
-  part2ah=headerHeight;
-  rect( part2ax, part2ay,part2aw,part2ah);
-  //
-    part2bx=headerWidth/4+ headerWidth/4 ;
- part2by=headerHeight/2;
-   part2bw=headerWidth/4 ;
-  part2bh=headerHeight;
-  rect( part2bx, part2by,part2bw,part2bh);
-  
-  //
-  space1x= boardX; 
-  space1y= boardY;
-  space1w= boardWidth/3;
-  space1h= boardHeight/3;
-  rect(space1x, space1y, space1w ,space1h);
-  //
-  space2x= space1x ;
-  space2y= boardHeight/3+boardHeight/3;
-  space2w= boardWidth/3;
-  space2h= boardHeight/3;
- rect(space2x,space2y,space2w,space2h);
-  //
-  space3x= space2x;
-  space3y= boardHeight/3+boardHeight/3+boardHeight/3;
-  space3w= boardWidth/3;
-  space3h= boardHeight/3;
- rect(space3x,space3y,space3w,space3h);
-  //
-  space4x= boardWidth/3;
-  space4y= boardY;
-  space4w= boardWidth/3;
-  space4h= boardHeight/3;
-  rect(space4x,space4y,space4w,space4h);
-  //
-  space5x= boardWidth/3 + boardWidth/3;
-  space5y= boardY;
-  space5w= boardWidth/3  ;
-  space5h= boardHeight/3;
+  background(white);
+  headerX = width*0;
+  headerY = height*0;
+  headerWidth = width;
+  headerHeight = height * 1/4;
 
-  rect(space5x,space5y,space5w,space5h);
-  //
-  space6x= boardWidth/3  ;
-  space6y= boardY+ boardY;
-  space6w= boardWidth/3  ;
-  space6h= boardHeight/3 ;
-  rect(space6x,space6y,space6w,space6h);
-  //
-  space7x= boardWidth/3+boardWidth/3;
-  space7y= boardY+ boardY;
-  space7w= boardWidth/3 ;
-  space7h= boardHeight/3 ;
-  rect(space7x,space7y,space7w,space7h);
-  //
-  space8x= boardWidth/3;
-  space8y= boardY+ boardY+ boardY;
-  space8w= boardWidth/3;
-  space8h= boardHeight/3;
-  rect(space8x,space8y,space8w,space8h);
-  //
-  space9x= boardWidth/3+ boardWidth/3 ;
-  space9y= boardY+ boardY+ boardY;
-  space9w= boardWidth/3;
-  space9h= boardHeight/3;
-  rect(space9x,space9y,space9w,space9h);
-
-//}
+  boardX = width * 0;
+  boardY = height * 1/4;
+  BoardWith = width;
+  BoardHeight = height * 3/4;
+  for (int i=0; i<spaceX.length; i=i+3) {
+    spaceX[i] = width * 0; //spaceX1 = spaceX4 = spaceX7 = width * 0;
   }
+  for (int i=1; i<spaceX.length; i=i+3) {
+    spaceX[i] = width * 1/3; //spaceX2 = spaceX5 = spaceX8 = width * 1/3;
+  }
+  for (int i=2; i<spaceX.length; i=i+3) {
+    spaceX[i] = width * 2/3; //spaceX3 = spaceX6 = spaceX9 = width * 2/3;
+  }
+  for (int i=0; i<4; i++) {
+    spaceY[i] = height * 1/4; //spaceY1 = spaceY2 = spaceY3 = height * 1/4;
+  }
+  for (int i=3; i<6; i++) {
+    spaceY[i] = height * 2/4; //spaceY4 = spaceY5 = spaceY6 = height * 2/4;
+  }
+  for (int i=6; i<9; i++) {
+    spaceY[i] = height * 3/4; //spaceY7 = spaceY8 = spaceY9 = height * 3/4;
+  }
+  spaceWidth = width * 1/3;
+  spaceHeight = height * 1/4;
+  lineAX1 = lineBX1 = width * 1/3;
+  lineAY1 = height * 1/4;
+  lineBY1 = height;
+  lineAX2 = lineBX2 = width * 2/3;
+  lineAY2 = height * 0/4;
+  lineBY2 = height;
+  lineAX3 = width * 0;
+  lineBX3 = width;
+  lineAY3 = lineBY3 = height * 2/4;
+  lineAX4 = width * 0;
+  lineBX4 = width;
+  lineAY4 = lineBY4 = height * 3/4;
+  resetX = width * 0;
+  resetY = height * 4/80;
+  resetWidth = width * 1/4;
+  resetHeight = height * 12/80;
+  scoreA = scoreAX = width * 1/4;
+  scoreAO = width * 5.5/12;
+  scoreB = scoreBX = scoreBO = height * 0;
+  scoreWidth = width * 5/12;
+  scoreWidthXO = width * 2.5/12;
+  scoreHeight = scoreHeightXO = height * 1/4;
+  darkX = easyX = mediumX = impossibleX = width * 2/3;
+  darkY = height * 0;
+  easyY = height * 1/16;
+  mediumY = height * 2/16;
+  impossibleY = height * 3/16;
+  darkWidth = easyWidth = mediumWidth = impossibleWidth = width * 1/3;
+  darkHeight = easyHeight = mediumHeight = impossibleHeight = height * 1/16;
+  scoreXnameX = scoreA;
+  scoreYnameX = scoreYvarX = height * 1/16;
+  scoreXvarX = scoreAX + scoreWidthXO*0.5;
+  scoreXnameO = scoreAO;
+  scoreYnameO = scoreYvarO = height * 1/16;
+  scoreXvarO = scoreAO + scoreWidthXO*0.5;
+  //
+  //rect(headerX, headerY, headerWidth, headerHeight);
+  //rect(boardX, boardY, BoardWith, BoardHeight);
+  /*
+  for (int i=0; i<spaceX.length; i++) {
+   rect(spaceX[i], spaceY[i], spaceWidth, spaceHeight);
+   }
+   */
+  //rect(spaceX1, spaceY1, spaceWidth, spaceHeight);
+  //rect(spaceX2, spaceY2, spaceWidth, spaceHeight);
+  //rect(spaceX3, spaceY3, spaceWidth, spaceHeight);
+  //rect(spaceX4, spaceY4, spaceWidth, spaceHeight);
+  //rect(spaceX5, spaceY5, spaceWidth, spaceHeight);
+  //rect(spaceX6, spaceY6, spaceWidth, spaceHeight);
+  //rect(spaceX7, spaceY7, spaceWidth, spaceHeight);
+  //rect(spaceX8, spaceY8, spaceWidth, spaceHeight);
+  //rect(spaceX9, spaceY9, spaceWidth, spaceHeight);
+  lines();
+  //rect(resetX, scoreYnameX, resetWidth, scoreHeightXO*0.5);
+  //rect(scoreA, scoreB, scoreWidth, scoreHeight);
+  //rect(scoreAX, scoreBX, scoreWidthXO, scoreHeightXO);
+  //rect(scoreAO, scoreBO, scoreWidthXO, scoreHeightXO);
+  //rect(scoreA, scoreB, scoreWidth, darkHeight); //Scoreboard Title
+  //rect(scoreA, impossibleY, scoreWidth, impossibleHeight); //1-Person or 2-Person Title
+  //rect(scoreXnameX, scoreYnameX, scoreWidthXO*0.5, scoreHeightXO*0.5);
+  //rect(scoreXvarX, scoreYvarX, scoreWidthXO*0.5, scoreHeightXO*0.5);
+  //rect(scoreXnameO, scoreYnameO, scoreWidthXO*0.5, scoreHeightXO*0.5);
+  //rect(scoreXvarO, scoreYvarO, scoreWidthXO*0.5, scoreHeightXO*0.5);
+  //rect(darkX, darkY, darkWidth, darkHeight);
+  //rect(easyX, easyY, easyWidth, easyHeight);
+  //rect(mediumX, mediumY, mediumWidth, mediumHeight);
+  //rect(impossibleX, impossibleY, impossibleWidth, impossibleHeight);
+}
+
+void lines() {
+  line(lineAX1, lineAY1, lineBX1, lineBY1);
+  line(lineAX2, lineAY2, lineBX2, lineBY2);
+  line(lineAX3, lineAY3, lineBX3, lineBY3);
+  line(lineAX4, lineAY4, lineBX4, lineBY4);
+}

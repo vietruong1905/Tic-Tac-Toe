@@ -1,94 +1,92 @@
 void hoverOver() {
   //
   //Reset, rect(resetX, scoreYnameX, resetWidth, scoreHeightXO*0.5);
-  if (mouseX >= part2ax  && mouseX <= part2ax+part2aw && mouseY >= scoreYnameX && mouseY <= (scoreYnameX+(part2ah*0.5)) ) {
+  if (mouseX >= resetX  && mouseX <= resetX+resetWidth && mouseY >= scoreYnameX && mouseY <= (scoreYnameX+(scoreHeightXO*0.5)) ) {
     fill(yellowQuitButton);
     noStroke();
-    rect(part2ax, part2ay,part2aw,part2ah*0.5);
+    rect(resetX, scoreYnameX, resetWidth, scoreHeightXO*0.5);
     stroke(1);
-    textDraw(reset, titleFont, height, black, CENTER, CENTER, part2ax, scoreYnameX, part2aw, part2ah*0.5);
+    textDraw(resetString, titleFont, height, black, CENTER, CENTER, resetX, scoreYnameX, resetWidth, scoreHeightXO*0.5);
   } else {
     //fill(purpleQuitButton);
     noStroke();
-    rect(part2ax, scoreYnameX, part2aw, part2ah*0.5);
+    rect(resetX, scoreYnameX, resetWidth, scoreHeightXO*0.5);
     stroke(1);
-    textDraw(reset, titleFont, height, black, CENTER, CENTER, part2ax, scoreYnameX, part2aw, part2ah*0.5);
+    textDraw(resetString, titleFont, height, black, CENTER, CENTER, resetX, scoreYnameX, resetWidth, scoreHeightXO*0.5);
   }
-  // part1dx, part1dy,part1dw,part1dh( impossible) 
-  // part1cx, part1cy,part1cw,part1ch
+  //
   //Player Mode, rect(scoreA, impossibleY, scoreWidth, impossibleHeight)
-  // part2bx, part2by,part2bw,part2bh
-  if (twoPlayer2 == false && twoPlayerAI == false && mouseX >= part2bx  && mouseX <= part1dy+part2bw && mouseY >= part1dy && mouseY <= part1dy+part1dh) {
+  if (twoPlayer2 == false && twoPlayerAI == false && mouseX >= scoreA  && mouseX <= impossibleY+scoreWidth && mouseY >= impossibleY && mouseY <= impossibleY+impossibleHeight) {
     fill(yellowQuitButton);
     noStroke();
-    rect(part2bx, part1cy, part2bw, part1ch);
+    rect(scoreA, impossibleY, scoreWidth, impossibleHeight);
     stroke(1);
-    textDraw(playerMode, titleFont, height, black, CENTER, TOP, part2bx, part1cy, part2bw, part1ch);
+    textDraw(playerMode, titleFont, height, black, CENTER, TOP, scoreA, impossibleY, scoreWidth, impossibleHeight);
   } else {
     fill(purpleQuitButton);
     noStroke();
-    rect(part2bx, part1cy, part2bw, part1ch);
+    rect(scoreA, impossibleY, scoreWidth, impossibleHeight);
     stroke(1);
-    textDraw(playerMode, titleFont, height, black, CENTER, TOP, part2bx, part1dy, part2bw, part1dh);
+    textDraw(playerMode, titleFont, height, black, CENTER, TOP, scoreA, impossibleY, scoreWidth, impossibleHeight);
   }
   //
-  //Dark Mode, rect(part1dx, part1dy,part1dw,part1dh);
-  if (mouseX >= part1dx  && mouseX <= part1dx+part1dw && mouseY >= part1dy && mouseY <= part1dy+part1dh) {
+  //Dark Mode, rect(darkX, darkY, darkWidth, darkHeight);
+  if (mouseX >= darkX  && mouseX <= darkX+darkWidth && mouseY >= darkY && mouseY <= darkY+darkHeight) {
     fill(yellowQuitButton);
     noStroke();
-    rect(part1dx, part1dy,part1dw,part1dh);
+    rect(darkX, darkY, darkWidth, darkHeight);
     stroke(1);
-    textDraw(dark, titleFont, height, black, LEFT, CENTER, part1dx, part1dy,part1dw,part1dh);
+    textDraw(dark, titleFont, height, black, LEFT, CENTER, darkX, darkY, darkWidth, darkHeight);
   } else {
     fill(purpleQuitButton);
     noStroke();
-    rect(part1dx, part1dy,part1dw,part1dh);
+    rect(darkX, darkY, darkWidth, darkHeight);
     stroke(1);
-    textDraw(dark, titleFont, height, black, LEFT, CENTER, part1dx, part1dy,part1dw,part1dh);
+    textDraw(dark, titleFont, height, black, LEFT, CENTER, darkX, darkY, darkWidth, darkHeight);
   }
   //
-  //Easy, rect(part1ax, part1ay,part1aw,part1ah);
-  if (mouseX >= part1ax  && mouseX <= part1ax+part1aw && mouseY >= part1ay && mouseY <= part1ay+part1ah) {
+  //Easy, rect(easyX, easyY, easyWidth, easyHeight);
+  if (mouseX >= easyX  && mouseX <= easyX+easyWidth && mouseY >= easyY && mouseY <= easyY+easyHeight) {
     fill(yellowQuitButton);
     noStroke();
-    rect(part1ax, part1ay,part1aw,part1ah);
+    rect(easyX, easyY, easyWidth, easyHeight);
     stroke(1);
-    textDraw(easy, titleFont, height, black, CENTER, CENTER, part1ax, part1ay,part1aw,part1ah);
+    textDraw(easyString, titleFont, height, black, CENTER, CENTER, easyX, easyY, easyWidth, easyHeight);
   } else {
     fill(purpleQuitButton);
     noStroke();
-    rect(part1ax, part1ay,part1aw,part1ah);
+    rect(easyX, easyY, easyWidth, easyHeight);
     stroke(1);
-    textDraw(easy, titleFont, height, black, CENTER, CENTER, part1ax, part1ay,part1aw,part1ah);
+    textDraw(easyString, titleFont, height, black, CENTER, CENTER, easyX, easyY, easyWidth, easyHeight);
   }
   //
-  //Medium, rect(part1bx, part1by,part1bw,part1bh);
-  if (mouseX >= part1bx  && mouseX <= part1bx+part1bw && mouseY >= part1by && mouseY <= part1by+part1bh) {
+  //Medium, rect(mediumX, mediumY, mediumWidth, mediumHeight);
+  if (mouseX >= mediumX  && mouseX <= mediumX+mediumWidth && mouseY >= mediumY && mouseY <= mediumY+mediumHeight) {
     fill(yellowQuitButton);
     noStroke();
-    rect(part1bx, part1by,part1bw,part1bh);
+    rect(mediumX, mediumY, mediumWidth, mediumHeight);
     stroke(1);
-    textDraw(medium, titleFont, height, black, CENTER, CENTER, part1bx, part1by,part1bw,part1bh);
+    textDraw(mediumString, titleFont, height, black, CENTER, CENTER, mediumX, mediumY, mediumWidth, mediumHeight);
   } else {
     fill(purpleQuitButton);
     noStroke();
-    rect(part1bx, part1by,part1bw,part1bh);
+    rect(mediumX, mediumY, mediumWidth, mediumHeight);
     stroke(1);
-    textDraw(medium, titleFont, height, black, CENTER, CENTER, part1bx, part1by,part1bw,part1bh);
+    textDraw(mediumString, titleFont, height, black, CENTER, CENTER, mediumX, mediumY, mediumWidth, mediumHeight);
   }
   //
-  //Impossible, rect(part1cx, part1cy,part1cw,part1ch);
-  if (mouseX >= part1cx  && mouseX <= part1cx+part1cw && mouseY >= part1cy && mouseY <= part1cy+part1ch) {
+  //Impossible, rect(impossibleX, impossibleY, impossibleWidth, impossibleHeight);
+  if (mouseX >= impossibleX  && mouseX <= impossibleX+impossibleWidth && mouseY >= impossibleY && mouseY <= impossibleY+impossibleHeight) {
     fill(yellowQuitButton);
     noStroke();
-    rect(part1cx, part1cy,part1cw,part1ch);
+    rect(impossibleX, impossibleY, impossibleWidth, impossibleHeight);
     stroke(1);
-    textDraw(impossible, titleFont, height, black, CENTER, CENTER, part1cx, part1cy,part1cw,part1ch);
+    textDraw(impossibleString, titleFont, height, black, CENTER, CENTER, impossibleX, impossibleY, impossibleWidth, impossibleHeight);
   } else {
     fill(purpleQuitButton);
     noStroke();
-    rect(part1cx, part1cy,part1cw,part1ch);
+    rect(impossibleX, impossibleY, impossibleWidth, impossibleHeight);
     stroke(1);
-    textDraw(impossible, titleFont, height, black, CENTER, CENTER, part1cx, part1cy,part1cw,part1ch);
+    textDraw(impossibleString, titleFont, height, black, CENTER, CENTER, impossibleX, impossibleY, impossibleWidth, impossibleHeight);
   }
 }

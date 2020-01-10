@@ -17,7 +17,7 @@ void readClickX() {
 
 void readClickO() {
   for (int i=0; i<clickO.length; i++) {
-    clickX[i] = false;
+    clickO[i] = false;
   }
 }
 
