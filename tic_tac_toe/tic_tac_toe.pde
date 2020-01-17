@@ -1,4 +1,5 @@
 //Global Variables
+ 
 Boolean start = false;
 int xScoreI=0, oScoreI=0;
 String xScoreS, oScoreS;
@@ -6,6 +7,7 @@ Boolean reset = false;
 
 void setup() {
   size(500, 600);
+ 
   textSetup();
   quitButtonSetup();
   GUI_setup();
@@ -15,6 +17,7 @@ void setup() {
 }
 
 void draw() {
+ 
   hoverOver();
   quitButtonDraw();
   if (start == true) {
