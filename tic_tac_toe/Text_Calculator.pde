@@ -13,7 +13,7 @@ color black = 0, white = 255;
 
 void textSetup() {
   titleFont = createFont ("Harrington", height); // //Must also Tools / Create Font / Find Font / Do Not Press "OK"
-  title = "Mercer's Kitchen Fastantic Weather App";
+  title = "Viet Truong's tic tac toe";
   titleWidth = width * 1/2;
   titleHeight = height * 1/10;
   quit = "X";

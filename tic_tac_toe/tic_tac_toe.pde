@@ -1,4 +1,15 @@
 //Global Variables
+ import ddf.minim.*;
+ import ddf.minim.analysis.*;
+ import ddf.minim.effects.*;
+ import ddf.minim.signals.*;
+ import ddf.minim.spi.*;
+ import ddf.minim.ugens.*;
+ Minim minim;
+ AudioPlayer sound;
+ // test
+ AudioPlayer player;
+ AudioInput input; 
  
 Boolean start = false;
 int xScoreI=0, oScoreI=0;
@@ -7,11 +18,15 @@ Boolean reset = false;
 
 void setup() {
   size(500, 600);
+  minim= new Minim(this);
+  sound = minim.loadFile("Free-ambient-background-music.mp3");
+  sound.loop();
  
   textSetup();
   quitButtonSetup();
   GUI_setup();
-  textDraw(playerMode, titleFont, height, black, CENTER, TOP, scoreA, impossibleY, scoreWidth, impossibleHeight);
+  textDraw(playerMode, titleFont, height, black
+  , CENTER, TOP, scoreA, impossibleY, scoreWidth, impossibleHeight);
   header();
   setUpReadArraysVariables();
 }
